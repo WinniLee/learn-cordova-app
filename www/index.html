@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="" ng-csp>
+<html ng-app="app" ng-csp>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
@@ -16,9 +16,10 @@
     <script src="scripts/linq/linq.min.js"></script>
     <script src="scripts/angular/angular.min.js"></script>
 </head>
-<body>
+<body ng-controller="MyController">
     <input type="text" ng-model="name" />
     <h2>{{name}}</h2>
+
     <div class="app">
         <p id="deviceready" class="event">正在連接到裝置</p>
         <p id="test">...</p>

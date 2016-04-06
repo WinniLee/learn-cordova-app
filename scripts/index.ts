@@ -24,19 +24,19 @@ module lab1 {
             //alert(product.productName);
             //document.getElementById("test").innerHTML += product.productName;
 
-            var jsonArray = [
-                { "user":{"id": 100, "screen_name": "d_linq" }, "text":"to objects"},
-                { "user": { "id": 130, "screen_name": "e_linq" }, "text": "es" },
-                { "user": { "id": 155, "screen_name": "f_linq" }, "text": "fs" },
-                { "user": { "id": 301, "screen_name": "g_linq" }, "text": "gs" }
-            ]
+            //var jsonArray = [
+            //    { "user":{"id": 100, "screen_name": "d_linq" }, "text":"to objects"},
+            //    { "user": { "id": 130, "screen_name": "e_linq" }, "text": "es" },
+            //    { "user": { "id": 155, "screen_name": "f_linq" }, "text": "fs" },
+            //    { "user": { "id": 301, "screen_name": "g_linq" }, "text": "gs" }
+            //]
 
-            var queryResult = Enumerable.From(jsonArray)
-                .Where(function (x) { return x.user.id < 200 })
-                .OrderBy(function (x) { return x.user.screen_name })
-                .Select(function (x) { return x.user.screen_name + ':' + x.text })
-                .ToArray();
-            alert(queryResult.toString());
+            //var queryResult = Enumerable.From(jsonArray)
+            //    .Where(function (x) { return x.user.id < 200 })
+            //    .OrderBy(function (x) { return x.user.screen_name })
+            //    .Select(function (x) { return x.user.screen_name + ':' + x.text })
+            //    .ToArray();
+            //alert(queryResult.toString());
         }
 
         function onPause() {

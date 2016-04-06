@@ -22,18 +22,18 @@ var lab1;
             //var product = new lab1.Models.Product("AA1", "AAProduct", 100);
             //alert(product.productName);
             //document.getElementById("test").innerHTML += product.productName;
-            var jsonArray = [
-                { "user": { "id": 100, "screen_name": "d_linq" }, "text": "to objects" },
-                { "user": { "id": 130, "screen_name": "e_linq" }, "text": "es" },
-                { "user": { "id": 155, "screen_name": "f_linq" }, "text": "fs" },
-                { "user": { "id": 301, "screen_name": "g_linq" }, "text": "gs" }
-            ];
-            var queryResult = Enumerable.From(jsonArray)
-                .Where(function (x) { return x.user.id < 200; })
-                .OrderBy(function (x) { return x.user.screen_name; })
-                .Select(function (x) { return x.user.screen_name + ':' + x.text; })
-                .ToArray();
-            alert(queryResult.toString());
+            //var jsonArray = [
+            //    { "user":{"id": 100, "screen_name": "d_linq" }, "text":"to objects"},
+            //    { "user": { "id": 130, "screen_name": "e_linq" }, "text": "es" },
+            //    { "user": { "id": 155, "screen_name": "f_linq" }, "text": "fs" },
+            //    { "user": { "id": 301, "screen_name": "g_linq" }, "text": "gs" }
+            //]
+            //var queryResult = Enumerable.From(jsonArray)
+            //    .Where(function (x) { return x.user.id < 200 })
+            //    .OrderBy(function (x) { return x.user.screen_name })
+            //    .Select(function (x) { return x.user.screen_name + ':' + x.text })
+            //    .ToArray();
+            //alert(queryResult.toString());
         }
         function onPause() {
             // TODO: 這個應用程式已暫停。請在這裡儲存應用程式狀態。
@@ -61,4 +61,22 @@ var lab1;
         Models.Product = Product;
     })(Models = lab1.Models || (lab1.Models = {}));
 })(lab1 || (lab1 = {}));
+/// <reference path="../models/product.ts" />
+var lab1;
+(function (lab1) {
+    var Controllers;
+    (function (Controllers) {
+        var MyController = (function () {
+            function MyController($scope) {
+                var product = new lab1.Models.Product("CC01", "CCPhone", 5);
+                $scope.name = product.productName;
+            }
+            return MyController;
+        }());
+        Controllers.MyController = MyController;
+    })(Controllers = lab1.Controllers || (lab1.Controllers = {}));
+})(lab1 || (lab1 = {}));
+/// <reference path="../controllers/mycontroller.ts" />
+var app = angular.module("app", []);
+app.controller("MyController", lab1.Controllers.MyController);
 //# sourceMappingURL=appBundle.js.map
