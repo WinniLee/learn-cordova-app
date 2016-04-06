@@ -16,9 +16,13 @@ module lab1 {
             document.addEventListener('resume', onResume, false);
 
             // TODO: Cordova 已載入。請在這裡執行任何需要 Cordova 的初始化作業。
-            var element = document.getElementById("deviceready");
-            element.innerHTML = 'Device Ready';
-            element.className += ' ready';
+            //var element = document.getElementById("deviceready");
+            //element.innerHTML = 'Device Ready';
+            //element.className += ' ready';
+
+            var product = new lab1.Models.Product("AA1", "AAProduct", 100);
+            alert(product.productName);
+            document.getElementById("test").innerHTML += product.productName;
         }
 
         function onPause() {

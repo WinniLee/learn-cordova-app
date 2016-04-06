@@ -16,9 +16,12 @@ var lab1;
             document.addEventListener('pause', onPause, false);
             document.addEventListener('resume', onResume, false);
             // TODO: Cordova 已載入。請在這裡執行任何需要 Cordova 的初始化作業。
-            var element = document.getElementById("deviceready");
-            element.innerHTML = 'Device Ready';
-            element.className += ' ready';
+            //var element = document.getElementById("deviceready");
+            //element.innerHTML = 'Device Ready';
+            //element.className += ' ready';
+            var product = new lab1.Models.Product("AA1", "AAProduct", 100);
+            alert(product.productName);
+            document.getElementById("test").innerHTML += product.productName;
         }
         function onPause() {
             // TODO: 這個應用程式已暫停。請在這裡儲存應用程式狀態。
@@ -30,5 +33,20 @@ var lab1;
     window.onload = function () {
         Application.initialize();
     };
+})(lab1 || (lab1 = {}));
+var lab1;
+(function (lab1) {
+    var Models;
+    (function (Models) {
+        var Product = (function () {
+            function Product(productId, productName, inventoryQuantity) {
+                this.productId = productId;
+                this.productName = productName;
+                this.inventoryQuantity = inventoryQuantity;
+            }
+            return Product;
+        }());
+        Models.Product = Product;
+    })(Models = lab1.Models || (lab1.Models = {}));
 })(lab1 || (lab1 = {}));
 //# sourceMappingURL=appBundle.js.map
