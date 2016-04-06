@@ -19,9 +19,21 @@ var lab1;
             //var element = document.getElementById("deviceready");
             //element.innerHTML = 'Device Ready';
             //element.className += ' ready';
-            var product = new lab1.Models.Product("AA1", "AAProduct", 100);
-            alert(product.productName);
-            document.getElementById("test").innerHTML += product.productName;
+            //var product = new lab1.Models.Product("AA1", "AAProduct", 100);
+            //alert(product.productName);
+            //document.getElementById("test").innerHTML += product.productName;
+            var jsonArray = [
+                { "user": { "id": 100, "screen_name": "d_linq" }, "text": "to objects" },
+                { "user": { "id": 130, "screen_name": "e_linq" }, "text": "es" },
+                { "user": { "id": 155, "screen_name": "f_linq" }, "text": "fs" },
+                { "user": { "id": 301, "screen_name": "g_linq" }, "text": "gs" }
+            ];
+            var queryResult = Enumerable.From(jsonArray)
+                .Where(function (x) { return x.user.id < 200; })
+                .OrderBy(function (x) { return x.user.screen_name; })
+                .Select(function (x) { return x.user.screen_name + ':' + x.text; })
+                .ToArray();
+            alert(queryResult.toString());
         }
         function onPause() {
             // TODO: 這個應用程式已暫停。請在這裡儲存應用程式狀態。
