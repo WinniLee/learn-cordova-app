@@ -1,0 +1,13 @@
+﻿<table ng-controller="ProductListController">
+    <tr ng-repeat="product in products">
+        <td></td>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.inventoryQuantity }}</td>
+    </tr>
+
+    <tr ng-repeat="product in products | orderBy : 'inventoryQuantity' : true">
+        <td>{{ $index + 1 }}</td>
+        <td>{{ product.productName | uppercase }}</td>
+        <td>{{ product.inventoryQuantity }}</td>
+    </tr>
+</table>

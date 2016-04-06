@@ -76,7 +76,27 @@ var lab1;
         Controllers.MyController = MyController;
     })(Controllers = lab1.Controllers || (lab1.Controllers = {}));
 })(lab1 || (lab1 = {}));
+/// <reference path="../models/product.ts" />
+var Product = lab1.Models.Product;
+var lab1;
+(function (lab1) {
+    var Controllers;
+    (function (Controllers) {
+        var ProductListController = (function () {
+            function ProductListController($scope) {
+                var products = new Array();
+                for (var i = 0; i < 10; i++) {
+                    products.push(new Product("A00" + i, "my phone" + i, i + 100));
+                }
+                $scope.products = products;
+            }
+            return ProductListController;
+        }());
+        Controllers.ProductListController = ProductListController;
+    })(Controllers = lab1.Controllers || (lab1.Controllers = {}));
+})(lab1 || (lab1 = {}));
 /// <reference path="../controllers/mycontroller.ts" />
 var app = angular.module("app", []);
 app.controller("MyController", lab1.Controllers.MyController);
+app.controller("ProductListController", lab1.Controllers.ProductListController);
 //# sourceMappingURL=appBundle.js.map

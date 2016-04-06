@@ -2,3 +2,4 @@
 
 var app = angular.module("app", []);
 app.controller("MyController", lab1.Controllers.MyController);
+app.controller("ProductListController", lab1.Controllers.ProductListController);

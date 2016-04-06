@@ -16,7 +16,19 @@
     <script src="scripts/linq/linq.min.js"></script>
     <script src="scripts/angular/angular.min.js"></script>
 </head>
-<body ng-controller="MyController">
+<body>
+    <ng-include src="'views/ProductList.html'"></ng-include>
+
+    <div class="app">
+        <p id="deviceready" class="event">正在連接到裝置</p>
+        <p id="test">...</p>
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/appBundle.js"></script>
+</body>
+<!--<body ng-controller="MyController">
     <input type="text" ng-model="name" />
     <h2>{{name}}</h2>
 
@@ -24,10 +36,9 @@
         <p id="deviceready" class="event">正在連接到裝置</p>
         <p id="test">...</p>
     </div>
-    <!-- Cordova 參考，建置後會加入您的應用程式。 -->
+
     <script src="cordova.js"></script>
     <script src="scripts/platformOverrides.js"></script>
     <script src="scripts/appBundle.js"></script>
-    <!-- test -->
-</body>
+</body>-->
 </html>
