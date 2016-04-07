@@ -1,0 +1,10 @@
+﻿<form ng-controller="CreateProductController" name="myForm" novalidate>
+    <p>
+        product ID:<br />
+        <input type="text" name="productId" ng-model="product.productId" required /><br />
+        <span ng-show="myForm.productId.$error.required">
+            ID is required.
+        </span>
+    </p>
+
+</form>
